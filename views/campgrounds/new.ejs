@@ -1,0 +1,37 @@
+<% include ../layouts/header %>
+
+
+    <div="row">
+        <h1 style="text-align: center">Create new Campground</h1>
+        <div style="width: 30%; margin: 35px auto;">
+            <form action="/campgrounds" method="POST">
+                
+                <div class="form-group">
+                    <label for="yelpcamp">Name</label>
+                    <input class="form-control" type="text" placeholder="insert Yelp Camp name" name="yelpcamp">
+                </div>
+                <div class="form-group">
+                    <label for="imgYelpcamp">Image URL</label>
+                    <input class="form-control" type="text" placeholder="image URL" name="imgYelpcamp">
+                </div>
+                <div class="form-group">
+                <label for="location">Location</label>
+                    <input class="form-control" type="text" name="location" id="location" placeholder="Boim, Lousada, Portugal">
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input class="form-control" type="number" placeholder="0.0€" name="price" min="0.01" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" type="text" placeholder="description" name="description"></textarea>
+                </div>
+                <div class="form-group"><button class="btn btn-lg btn-primary btn-block">Submit!</button></div>
+            </form>
+            <a href="/campgrounds">Go Back</a>
+        </div>
+        
+    </div>
+
+<% include ../layouts/footer %>
