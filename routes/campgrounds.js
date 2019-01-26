@@ -3,14 +3,14 @@ var router = express.Router();
 var Campground = require("../models/campground");
 var middleware = require("../middleware/");
 var NodeGeocoder = require('node-geocoder');
-var googleKey = process.env.GOOGLEAPI || require("../api");
+var googleKey = process.env.GOOGLEAPI || require("../api").googleApi;
 
 var options = {
     provider: 'google',
 
     // Optional depending on the providers
     httpAdapter: 'https', // Default
-    apiKey: googleKey.googleApi, // for Mapquest, OpenCage, Google Premier
+    apiKey: googleKey, // for Mapquest, OpenCage, Google Premier
     formatter: null // 'gpx', 'string', ...
 };
 

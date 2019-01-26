@@ -16,13 +16,15 @@ var commentRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
 
 //export DATABASEURL = mongodb: //localhost/yelp_camp
-var url = process.env.DATABASEURL || require("./api");
-//var url = process.env.DATABASEURL;
-mongoose.connect(
-    url.mongodb, {
-        useMongoClient: true
-    }
-);
+
+// const url = process.env.DATABASEURL || require("./api").mongodb;
+const mlabPass = process.env.DATABASEURL || require("./api").mongodb;
+
+const url = `mongodb://chrismo:${mlabPass}.mlab.com:11885/myyelpcamp`
+
+mongoose.connect(url, {
+    useMongoClient: true
+});
 
 mongoose.Promise = global.Promise;
 
